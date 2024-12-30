@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="./image/download.png">
+  <title>Pricing</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+    }
+  </style>
+</head>
+<body class="text-white font-mono">
+  <!-- Header Section -->
+  <header class="flex justify-between items-center p-6 bg-black text-white">
+    <a href="#" class="text-3xl font-bold">black</a>
+    <nav class="hidden md:flex space-x-6 text-lg">
+      <a href="#about" class="hover:text-gray-400">About Me</a>
+      <a href="#work" class="hover:text-gray-400">Work</a>
+      <a href="index.html" class="hover:text-gray-400">home</a>
+      
+    </nav>
+    <a
+      href="contact.html"
+      aria-label="contact"
+      class="flex items-center gap-2 bg-black border border-white px-4 py-2 rounded-full hover:bg-gray-800 transition-all"
+    >
+      <span>Get in touch</span>
+      <div class="flex items-center justify-center w-6 h-6 bg-white text-black rounded-full">
+        <i class="bi bi-arrow-up-right"></i>
+      </div>
+    </a>
+    <button class="md:hidden text-white text-2xl" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-black text-white p-4">
+    <nav class="space-y-4">
+      <a href="#about" class="block hover:text-gray-400">About Me</a>
+      <a href="#work" class="block hover:text-gray-400">Work</a>
+      <a href="#articles" class="block hover:text-gray-400">Articles</a>
+
+    </nav>
+  </div>
+
+  <!-- Pricing Section -->
+  <section class="py-16" id="home">
+    <div class="text-center mb-12">
+      <h1 class="text-5xl font-extrabold mb-4">Choose Your Plan</h1>
+      <p class="text-lg text-gray-400">Select a plan with essential frontend tools to elevate your projects.</p>
+    </div>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Free Plan -->
+      <div class="bg-gray-800 hover:bg-gray-700 transition-all rounded-xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold mb-4">Free</h2>
+        <p class="text-gray-300 mb-6">Get started with essential frontend tools.</p>
+        <h3 class="text-4xl font-bold mb-6">0 ETB</h3>
+        <ul class="text-gray-400 mb-8 space-y-3">
+          <li>✔ Access to HTML and CSS basics</li>
+          <li>✔ Responsive layout templates</li>
+          <li>✔ Basic JavaScript snippets</li>
+          <li>✔ Community support</li>
+          <li>✔ Limited component library</li>
+        </ul>
+        <button onclick="choosePlan('Free')" class="bg-black-500 hover:bg-gray-600 transition-all text-white px-6 py-3 rounded-lg w-full font-medium text-lg">Choose Plan</button>
+      </div>
+      <!-- Personal Plan -->
+      <div class="bg-gray-800 hover:bg-gray-700 transition-all rounded-xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold mb-4">Personal</h2>
+        <p class="text-gray-300 mb-6">For developers looking to enhance their frontend skills.</p>
+        <h3 class="text-4xl font-bold mb-6">1,500 ETB</h3>
+        <ul class="text-gray-400 mb-8 space-y-3">
+          <li>✔ Access to advanced JavaScript examples</li>
+          <li>✔ Customizable responsive grid systems</li>
+          <li>✔ Cross-browser testing tools</li>
+          <li>✔ Tailwind CSS starter projects</li>
+          <li>✔ Intermediate UI components library</li>
+        </ul>
+        <button onclick="choosePlan('Personal')" class="bg-black-500 hover:bg-gray-600 transition-all text-white px-6 py-3 rounded-lg w-full font-medium text-lg">Choose Plan</button>
+      </div>
+      <!-- Team Plan -->
+      <div class="bg-gray-800 hover:bg-gray-700 transition-all rounded-xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold mb-4">Team</h2>
+        <p class="text-gray-300 mb-6">Perfect for teams working on complex frontend projects.</p>
+        <h3 class="text-4xl font-bold mb-6">3,500 ETB</h3>
+        <ul class="text-gray-400 mb-8 space-y-3">
+          <li>✔ Advanced React and Vue.js templates</li>
+          <li>✔ Prototyping tools for UI/UX design</li>
+          <li>✔ Performance optimization tools</li>
+          <li>✔ Full access to premium component libraries</li>
+          <li>✔ Priority support and code reviews</li>
+        </ul>
+        <button onclick="choosePlan('Team')" class="bg-black-500 hover:bg-gray-600 transition-all text-white px-6 py-3 rounded-lg w-full font-medium text-lg">Choose Plan</button>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function choosePlan(plan) {
+      const telegramURL = `https://t.me/maxblacket?text=I%20chose%20the%20${plan}%20plan`;
+      window.location.href = telegramURL;
+    }
+  </script>
+</body>
+</html>
